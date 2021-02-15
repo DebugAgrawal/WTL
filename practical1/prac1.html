@@ -16,6 +16,7 @@
       <form
         style="backdrop-filter: blur(10px)"
         class="w-full max-w-lg shadow-2xl pt-8 pb-3 px-8 rounded"
+        
       >
         <div class="flex flex-wrap -mx-3 mb-6">
           <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
@@ -30,6 +31,7 @@
               id="grid-first-name"
               type="text"
               placeholder="Deepak"
+              required
             />
             <p class="text-red-500 text-xs italic">
               Please fill out this field.
@@ -63,6 +65,7 @@
               id="mob-no"
               type="number"
               placeholder="9423******"
+              required
             />
             <label
               class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -75,6 +78,7 @@
               id="mail"
               type="email"
               placeholder="Enter Here"
+              required
             />
             <label
               class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -86,10 +90,11 @@
               class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="password"
               type="password"
-              placeholder="******************"
+              placeholder="********"
+              required
             />
             <p class="text-gray-600 text-xs italic">
-              Make it as long and as crazy as you'd like
+              Min 8 Characters required
             </p>
           </div>
         </div>
@@ -155,13 +160,34 @@
             />
           </div>
         </div>
-        <button
+        <input
           class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 my-5 px-4 w-full rounded"
-          type="button"
-        >
-          Sign Up
-        </button>
+          type="submit" onclick="check()"
+        />
       </form>
     </div>
+    <script>
+      function check(){
+        var pass=document.getElementById('password').value;
+        var mob=document.getElementById('mob-no').value;
+        event.preventDefault();
+        if(pass.length<8)
+        {
+          alert("Password is weak re-enter password");
+          document.getElementById('password').value="";
+          return;
+        }
+        if(mob.length<10)
+        {
+          alert("Enter valid Mobile Number");
+          document.getElementById('passwmob-noord').value="";
+          return;
+        }
+        else
+        {
+          window.open('../index.html');
+      return;}
+      }
+    </script>
   </body>
 </html>
