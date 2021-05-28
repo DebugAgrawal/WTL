@@ -1,2 +1,2 @@
 # WTL
-All Practicals of WTL : Semester 6
+Web Technology Lab practicals : Semester 6
